@@ -5,4 +5,6 @@ RUN curl -O https://chuck.cs.princeton.edu/release/files/chuck-1.4.0.0.tgz
 RUN tar -xzvf chuck-1.4.0.0.tgz
 RUN cd chuck-1.4.0.0/src && make linux-alsa && make install
 
-ENTRYPOINT ["chuck"]
+COPY render.sh /render.sh
+
+ENTRYPOINT ["/render.sh"]

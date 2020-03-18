@@ -1,0 +1,10 @@
+name: 'ChucK Renderer'
+description: 'Render your ChucK files to wavs in GitHub Actions'
+inputs:
+  chuck-file-glob:
+    description: 'A glob to find .ck files in'
+    required: true
+    default: './**.ck'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
